@@ -79,11 +79,11 @@ interface LaraXThumbnailInterface
 
     /**
      * Getting URL
-     * @param mixed $path
+     * @param string $path
      * @param string $type
      * @return string
      */
-    public function download(mixed $path, $type);
+    public function download(string $path, $type);
 
     /**
      * Getting Size

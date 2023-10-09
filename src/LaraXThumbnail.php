@@ -109,6 +109,7 @@ class LaraXThumbnail implements LaraXThumbnailInterface
     public function makeThumbnail(string $fullPath, string $directory, string $type, string $prefix, $width = null, $height = null) {
         $url = '';
         try {
+
             // generating thumbnail
             if (!empty($fullPath) && (!empty($width) || !empty($height))) {
                 // Use pathinfo() to get the file name and extension
@@ -127,22 +128,7 @@ class LaraXThumbnail implements LaraXThumbnailInterface
                     $mimeType
                 );
 
-                $thumbnailPath = $this->_thumbnail($uploadedFile, $thumbnailFileName, $width, $height);
-
-                $thumbnailFile = new UploadedFile(
-                    $thumbnailPath,
-                    $thumbnailFileName,
-                    $mimeType
-                );
-
-                if (!empty($thumbnailPath)) {
-                    Storage::disk($type)->putFileAs($directory, $thumbnailFile, $thumbnailFileName);
-
-                    // unlink after uploading thumbnail to S3
-                    unlink($thumbnailPath);
-                }
-                // get full url
-                $url = $this->download($thumbnailPath, $type);
+                $url = $this->_thumbnail($uploadedFile, $thumbnailFileName, $width, $height);
             }
         } catch (\Throwable $th) {
         }
