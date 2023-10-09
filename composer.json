@@ -1,0 +1,54 @@
+{
+    "name": "lmkhang10/lara_thumbnail",
+    "version": "1.0.0",
+    "description": "Generating thumbnail in laravel basing intervention Image",
+    "homepage": "https://github.com/lmkhang10/lara_thumbnail",
+    "keywords": [
+      "thumbnails",
+      "generating thumbnail",
+      "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "BarryLe",
+        "email": "barryle89@gmail.com",
+        "role": "Developer"
+      }
+    ],
+    "require": {
+      "php": "^7.4|^8.1",
+      "intervention/image": "*",
+      "guzzlehttp/guzzle": "^7.5.0"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "^9.5.26",
+      "phpunit/php-code-coverage": "^9.2.18",
+      "mockery/mockery": "^1.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "LaraX\\Thumbnail\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+      }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Intervention\\Image\\ImageServiceProvider",
+              "LaraX\\Thumbnail\\LaraXThumbnailProvider"
+          ],
+          "aliases": {
+              "LaraX": "LaraX\\Thumbnail\\Facade\\LaraXThumbnail"
+          }
+      }
+    },
+    "config": {
+      "allow-plugins": {
+        "symfony/flex": true
+      }
+    }
+}
