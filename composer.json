@@ -39,11 +39,7 @@
     "laravel": {
         "providers": [
             "Intervention\\Image\\ImageServiceProvider",
-            "LaraX\\Thumbnail\\LaraXThumbnailProvider"
-        ],
-        "aliases": {
-            "LaraX": "LaraX\\Thumbnail\\Facade\\LaraXThumbnail"
-        }
+        ]
     }
   },
   "config": {
