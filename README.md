@@ -47,10 +47,8 @@ Here is a sample call to generate a LaraXThumbnail screenshot URL:
 
 ```php
     use LaraX\Thumbnail\LaraXThumbnail;
-    $laraXThumbnail = LaraXThumbnail();
-    
-    // Create the Urlbox URL
-    $thumbnailUrl = $laraXThumbnail->makeThumbnail($fullPath, $directory, $type, $prefix, $width);
+    $LaraXThumbnail = new LaraXThumbnail();
+    $thumbnailUrl = $LaraXThumbnail->makeThumbnail(storage_path('app/public/'. $folder .$newFileName), $folder, 'public', 'thumbnail_', 240);
     
     // Generate a screenshot by loading the Urlbox URL in an img tag:
     echo '<img src="' . $thumbnailUrl . '" alt="Test thumbnail generated">'
@@ -59,16 +57,14 @@ Here is a sample call to generate a LaraXThumbnail screenshot URL:
 If you're using Laravel and have set up the service provider, you can use the Facade provided:
 
 ```php
-use LaraX\Thumbnail\Facades\LaraXThumbnail;
+use LaraX\Thumbnail\LaraXThumbnail;
 
-// Create the Urlbox URL
-    $thumbnailUrl = $laraXThumbnail::makeThumbnail($fullPath, $directory, $type, $prefix, $width);
-// $urlboxUrl is now 'https://api.urlbox.io/v1/API_KEY/TOKEN/png?url=example.com'
+// Create the thumbnail URL
+$LaraXThumbnail = new LaraXThumbnail();
+$thumbnailUrl = $laraXThumbnail->makeThumbnail(storage_path('app/public/'. $folder .$newFileName), $folder, 'public', 'thumbnail_', 240);
 ```
 
-You can now use the result (`$urlboxUrl`) by placing it inside an `<img/>` tag as the `src` parameter.
-
-When you load the image, a screenshot of example.com will be returned.
+You can now use the result (`$thumbnailUrl`) by placing it inside an `<img/>` tag as the `src` parameter.
 
 ## Contributing
 
@@ -78,7 +74,7 @@ We are open to pull requests.
 
 If you discover any security related issues, please email barryle89@gmail.com instead of using the issue tracker.
 
-## About Urlbox
+## About LaraXThumbnail
 
 Generating thumbnail in laravel basing intervention Image
 
