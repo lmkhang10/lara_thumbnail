@@ -128,7 +128,7 @@ class LaraXThumbnail implements LaraXThumbnailInterface
                     $mimeType
                 );
 
-                $url = $this->_thumbnail($uploadedFile, $thumbnailFileName, $this->width, $height);
+                $url = $this->_thumbnail($uploadedFile, $thumbnailFileName, $width, $height);
             }
         } catch (\Throwable $th) {
         }
