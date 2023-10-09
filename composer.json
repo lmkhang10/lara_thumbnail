@@ -38,7 +38,7 @@
   "extra": {
     "laravel": {
         "providers": [
-            "Intervention\\Image\\ImageServiceProvider",
+            "Intervention\\Image\\ImageServiceProvider"
         ]
     }
   },
