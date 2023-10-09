@@ -380,24 +380,26 @@ class LaraXThumbnail implements LaraXThumbnailInterface
      */
     private function _thumbnail($file, $thumbnailFileName, $width = null, $height = null) {
         $thumbnailPath = '';
-        try {
-            $path = $file->getPathname();
+        if (env('GENERATE_THUMBNAIL', false) === true) {
+            try {
+                $path = $file->getPathname();
 
-            $image = Image::make($path);
+                $image = Image::make($path);
 
-            // Generate a thumbnail file name with the "thumb_" prefix and the original extension
-            $thumbnailPath = dirname($path) . '/' . $thumbnailFileName;
+                // Generate a thumbnail file name with the "thumb_" prefix and the original extension
+                $thumbnailPath = dirname($path) . '/' . $thumbnailFileName;
 
-            // Resize the image to a width or height while maintaining the aspect ratio
-            $image = $image->resize($width, $height, function ($constraint) {
-                $constraint->aspectRatio();
-            });
+                // Resize the image to a width or height while maintaining the aspect ratio
+                $image = $image->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
 
-            // Save the thumbnail with the "thumb_" prefix and the original file extension
-            // Save the thumbnail in the same folder as the original image
-            $image->save($thumbnailPath);
+                // Save the thumbnail with the "thumb_" prefix and the original file extension
+                // Save the thumbnail in the same folder as the original image
+                $image->save($thumbnailPath);
 
-        } catch (\Throwable $th) {
+            } catch (\Throwable $th) {
+            }
         }
 
         return $thumbnailPath;
