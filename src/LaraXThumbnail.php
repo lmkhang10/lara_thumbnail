@@ -5,6 +5,7 @@ namespace LaraX\Thumbnail;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class LaraXThumbnail implements LaraXThumbnailInterface
 {
