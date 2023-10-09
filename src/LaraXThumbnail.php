@@ -118,7 +118,7 @@ class LaraXThumbnail implements LaraXThumbnailInterface
                 $fileName = $pathInfo['filename'];
                 $extension = $pathInfo['extension'];
 
-                $image_name = random_int(100000, 999999) . '_' . $fileName  . '.' . $extension;
+                $image_name = $fileName  . '.' . $extension;
                 $thumbnailFileName = $prefix . $image_name;
                 $mimeType = $this->mimeContentType($thumbnailFileName);
 
