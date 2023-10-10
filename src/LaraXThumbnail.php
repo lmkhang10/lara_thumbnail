@@ -396,9 +396,7 @@ class LaraXThumbnail implements LaraXThumbnailInterface
                 // Save the thumbnail in the same folder as the original image
                 $image->save($thumbnailPath);
 
-            } catch (\Throwable $th) {
-                dump($th->getMessage());
-            }
+            } catch (\Throwable $th) {}
         }
 
         return $thumbnailPath;
