@@ -34,14 +34,13 @@ interface LaraXThumbnailInterface
      * Making thumbnail from an existed file
      *
      * @param string $filePath
-     * @param string $directory
      * @param string $type
      * @param string $thumbnailFileName
      * @param numeric $width | null
      * @param numeric $height | null
      * return string
      */
-    public function makeThumbnail(string $fullPath, string $directory, string $type, string $prefix, $width = null, $height = null);
+    public function makeThumbnail(string $fullPath, string $type, string $prefix, $width = null, $height = null);
 
     /**
      * Getting Full Path

@@ -99,14 +99,13 @@ class LaraXThumbnail implements LaraXThumbnailInterface
     /**
      * Generating thumbnail
      * @param string $fullPath
-     * @param string $directory
      * @param string $type
      * @param string $prefix
      * @param numeric $width | null
      * @param numeric $height | null
      * return string
      */
-    public function makeThumbnail(string $fullPath, string $directory, string $type, string $prefix, $width = null, $height = null) {
+    public function makeThumbnail(string $fullPath, string $type, string $prefix, $width = null, $height = null) {
         $url = '';
         try {
 
