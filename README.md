@@ -1,4 +1,5 @@
 ## Installation
+test
 
 This package can be installed through Composer.
 
